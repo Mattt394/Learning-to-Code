@@ -10,7 +10,7 @@ import time
 
 address = input('Please type the location of your image (with quotes, depending on your console), escape \ with \\\: ')
 
-
+# Checking to see if file is valid
 def test_img(adr):
     try:
         data.imread(adr)
@@ -22,7 +22,7 @@ while not test_img(address):
     address = input('Img not found, please try again: ')
 
 print('Thanks, working on it...')
-
+#Getting image
 img = data.imread(address)
 
 #All pixels that are less than 100 set to true
@@ -39,6 +39,7 @@ img[light,2] += 50
 
 print('Will show preview shortly')
 
+#Displays image, but at end of program
 plt.figure(figsize=(5,5))
 plt.imshow(img)
 
@@ -47,6 +48,7 @@ yes_no = input('Would you like to save your file, y/n: ')
 
 yes_no = str(yes_no)
 
+#determines if user wants to save file
 def save(y_n):
     #NOTE: This assumes the user is trusted
     if (y_n in ('yes','y')):
